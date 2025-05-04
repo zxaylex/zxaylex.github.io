@@ -19,6 +19,7 @@ body {
 
 .description {
     padding: 2rem;
+    margin-left: 3rem;
 }
 
 .hello-there {
@@ -50,4 +51,11 @@ body {
 
 .social-icons a img:hover {
     transform: translateY(-4px);
+}
+
+@media only screen and (max-width: 920px) {
+    body {
+        display: block;
+        padding: 0;
+    }
 }
