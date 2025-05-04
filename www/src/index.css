@@ -45,9 +45,16 @@ nav {
 }
 
 .activeLink {  
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem; 
   border-radius: 3px;
   background: white;
   color: black;
   transition: all;
   transition-duration: 0.3s;  
+}
+
+.line-br {
+  width: 100vw;
+  height: 8px;
+  background-color: #C1FFB9;
 }

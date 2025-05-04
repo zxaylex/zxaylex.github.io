@@ -1,0 +1,79 @@
+.main {
+    display: flex;
+    width: auto;
+    .right {
+        flex-grow: 1;
+        .status {
+            margin-left: auto;
+            margin-right: 1rem;
+        }
+        .status p {
+            text-align: right;
+        }
+
+        .status span {
+            color: green;
+        }
+    }
+}
+
+.category {
+    font-size: 18px;
+}
+
+.todos {
+    font-size: 16px;
+    margin-left: 2rem;
+}
+
+.todo {
+    justify-items: center;
+    padding: 1rem;
+    .todocontainer {
+        .todotitle {
+            color: #1540FF;
+            margin-top: 0;
+            font-size: 18px;
+        }
+        padding: 2rem; 
+        border-radius: 8px;
+        border: solid 1px #808080;
+        margin-top: 4rem;
+    }
+}
+
+.name {
+    font-size: 24px;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+.title {
+    font-size: 18px;
+    margin-top: 0;
+    color: #169976;
+}
+
+.bio {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    color: #BBBBBB;
+    .age {
+        margin-bottom: 0;
+    }
+    .program {
+        margin-top: 0;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .main {
+        display:block;
+    }
+    .status {
+        margin-top: 3rem;
+        margin-left: 1rem;
+        margin-right: auto;
+    }
+  }

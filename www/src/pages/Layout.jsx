@@ -1,30 +1,30 @@
 import { Outlet, Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const Layout = () => {
-    const navLinks = {
-        {to: "/", label: "Home"}
-        // TODO: create a map for the links.
-    }
+    const location = useLocation()
+    const navLinks = [
+        {to: "/", label: "Home"},
+        {to: "/tools", label: "Tools"},
+        {to: "/blog", label: "Blog"},
+        {to: "/contact", label: "Contact"}
+    ]
     return (
         <>
+            <div className="line-br"></div>
             <div className="outlet">
                 <Outlet/>   
             </div>
 
             <nav>
                 <ul>
-                    <li>
-                        <Link className="navLink" to="/">home</Link>
-                    </li>
-                    <li>
-                        <Link className="navLink" to="/tools">tools</Link>
-                    </li>
-                    <li>
-                        <Link className="navLink" to="/blog">blog</Link>
-                    </li>
-                    <li>
-                        <Link className="navLink" to="/contact">contact</Link>
-                    </li>
+                    {navLinks.map((link) => (
+                        <li key={link.to}>
+                            <Link to={link.to} className={location.pathname === link.to ? 'activeLink': 'navLink'}>
+                                {link.label}
+                            </Link>
+                        </li>
+                    ))}
                 </ul>
             </nav>
 

@@ -1,5 +1,6 @@
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AnimatePresence } from 'framer-motion';
 
 import Layout from "./pages/Layout"
 import Home from "./pages/Home"
@@ -12,14 +13,17 @@ export default function App() {
 
   return (
     <BrowserRouter>
-        <Routes>
-        <Route path="/" element={<Layout/>}>
-          <Route index element={<Home/>}/>
-          <Route path="/tools" element={<Tools/>}/>
-          <Route path="/blog" element={<Blog/>}/>
-          <Route path="/contact" element={<Contact/>}/>
-        </Route>
-      </Routes>
+      <AnimatePresence mode='wait'>
+
+          <Routes>
+          <Route path="/" element={<Layout/>}>
+            <Route index element={<Home/>}/>
+            <Route path="/tools" element={<Tools/>}/>
+            <Route path="/blog" element={<Blog/>}/>
+            <Route path="/contact" element={<Contact/>}/>
+          </Route>
+        </Routes>
+      </AnimatePresence>
     </BrowserRouter>
   )
 }
