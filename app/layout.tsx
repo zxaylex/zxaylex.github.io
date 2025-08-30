@@ -16,6 +16,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Zach David",
   description: "Personal Website",
+  icons: {
+    icon: [
+      { url: "/logo.pns" }
+    ]
+  }
 };
 
 export default function RootLayout({
