@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description: "Personal Website",
   icons: {
     icon: [
-      { url: "/logo.pns" }
+      { url: "/logo.png" }
     ]
   }
 };
