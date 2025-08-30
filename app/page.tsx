@@ -51,7 +51,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="projects" className="lg:h-dvh p-4 pt-20 justify-items-center">
+        <section id="projects" className="sm:h-dvh p-4 pt-20 justify-items-center">
           <h1 className="text-2xl">Projects</h1>
           <div className="sm:flex gap-4 pt-4"> 
             {
