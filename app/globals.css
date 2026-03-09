@@ -117,10 +117,15 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground transition-colors duration-300;
+    background-image: radial-gradient(circle at top right, color-mix(in oklab, var(--color-primary) 8%, transparent), transparent 38%);
   }
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+.section-title {
+  @apply mb-8 text-3xl font-semibold tracking-tight md:text-4xl;
 }

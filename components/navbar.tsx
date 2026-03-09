@@ -1,5 +1,9 @@
 
+"use client"
+
 import Image from "next/image"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import {
   NavigationMenu,
@@ -12,20 +16,15 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
-
-// Navigation links array to be used in both desktop and mobile menus
-const navigationLinks = [
-  { href: "#home", label: "Home", active: true },
-  { href: "#projects", label: "Projects" },
-  { href: "#experience", label: "Experience" },
-  { href: "#tools", label: "Tools I Use" },
-  { href: "#contacts", label: "Contact" },
-]
+import { ThemeToggle } from "@/components/theme-toggle"
+import { navLinks } from "@/lib/site-data"
 
 export default function NavBar() {
+  const pathname = usePathname()
+
   return (
-    <header className="border-b px-4 md:px-6 fixed">
-      <div className="flex h-16 items-center justify-between gap-4">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-border/70 bg-background/90 px-4 backdrop-blur md:px-6">
+      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4">
         {/* Left side */}
         <div className="flex items-center gap-2">
           {/* Mobile menu trigger */}
@@ -66,14 +65,14 @@ export default function NavBar() {
             <PopoverContent align="end" className="w-36 p-1 md:hidden">
               <NavigationMenu className="max-w-none *:w-full">
                 <NavigationMenuList className="flex-col items-start gap-0 md:gap-2">
-                  {navigationLinks.map((link, index) => (
+                  {navLinks.map((link, index) => (
                     <NavigationMenuItem key={index} className="w-full">
                       <NavigationMenuLink
-                        href={link.href}
+                        asChild
                         className="py-1.5"
-                        active={link.active}
+                        active={pathname === link.href}
                       >
-                        {link.label}
+                        <Link href={link.href}>{link.label}</Link>
                       </NavigationMenuLink>
                     </NavigationMenuItem>
                   ))}
@@ -83,24 +82,24 @@ export default function NavBar() {
           </Popover>
           {/* Main nav */}
           <div className="flex items-center gap-6">
-            <a href="#" className="text-primary hover:text-primary/90">
+            <Link href="/" className="text-primary hover:text-primary/90 transition-colors">
               <Image
               src={'/logo.png'}
               width={50}
               height={50}
               alt="logo.png"></Image>
-            </a>
+            </Link>
             {/* Navigation menu */}
             <NavigationMenu className="max-md:hidden">
               <NavigationMenuList className="gap-2">
-                {navigationLinks.map((link, index) => (
+                {navLinks.map((link, index) => (
                   <NavigationMenuItem key={index}>
                     <NavigationMenuLink
-                      active={link.active}
-                      href={link.href}
+                      asChild
+                      active={pathname === link.href}
                       className="text-muted-foreground hover:text-primary py-1.5 font-medium"
                     >
-                      {link.label}
+                      <Link href={link.href}>{link.label}</Link>
                     </NavigationMenuLink>
                   </NavigationMenuItem>
                 ))}
@@ -108,6 +107,8 @@ export default function NavBar() {
             </NavigationMenu>
           </div>
         </div>
+
+        <ThemeToggle />
       </div>
     </header>
   )

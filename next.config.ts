@@ -3,11 +3,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-  skipMiddlewareUrlNormalize: true,
+  skipProxyUrlNormalize: true,
   trailingSlash: true,
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   typescript: {
     ignoreBuildErrors: true,
   },
