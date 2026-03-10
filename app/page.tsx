@@ -1,15 +1,18 @@
 import { AnimatedContainer } from "@/components/animated-container";
 import { homeProfile } from "@/lib/site-data";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <main className="mx-auto min-h-screen w-full max-w-6xl px-6 pt-28 pb-16">
       <AnimatedContainer className="grid items-center gap-8 lg:grid-cols-[1fr_1.3fr]" delay={0.05}>
         <div className="mx-auto w-full max-w-sm overflow-hidden rounded-2xl border border-border bg-card/80 p-2 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-          <img
+          <Image
             src="/profile.jpg"
             alt={homeProfile.name}
             className="aspect-[4/5] w-full rounded-xl object-cover"
+            width={800}
+            height={1000}
           />
         </div>
 

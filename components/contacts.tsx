@@ -1,4 +1,5 @@
 import * as Avatar from '@radix-ui/react-avatar';
+import Image from 'next/image';
 import { contactLinks } from "@/lib/site-data";
 
 export function ContactsPage() {
@@ -12,7 +13,7 @@ export function ContactsPage() {
             className="rounded-full w-full h-full object-cover"
           />
           <Avatar.Fallback className="rounded-full w-full h-full flex items-center justify-center bg-muted text-4xl text-muted-foreground">
-            <img src="/profile.jpg" alt="Profile Picture" className='rounded-full'/>
+            <Image src="/profile.jpg" alt="Profile Picture" width={96} height={96} className='rounded-full'/>
           </Avatar.Fallback>
         </Avatar.Root>
         <h2 className="text-3xl font-bold mb-1 text-center">Zach David Maregmen</h2>
@@ -26,7 +27,7 @@ export function ContactsPage() {
               rel="noopener noreferrer"
               className="flex items-center gap-4 rounded-lg border border-border bg-card/80 p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
-              <img src={social.icon} alt={social.name} className="w-8 h-8" />
+              <Image src={social.icon} alt={social.name} width={32} height={32} className="w-8 h-8" />
               <div>
                 <div className="font-semibold">{social.name}</div>
                 <div className="text-sm text-muted-foreground">{social.username}</div>

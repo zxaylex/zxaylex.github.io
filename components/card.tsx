@@ -1,4 +1,5 @@
 import React from "react"
+import Image from "next/image"
 
 type ProjectCardProps = {
     image: string, 
@@ -13,10 +14,12 @@ export default function ProjectCard({ image, title, subtitle, description, link 
         <article className="mx-auto mt-4 max-w-md overflow-hidden rounded-xl border border-border bg-card/80 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg md:max-w-2xl">
             <div>
                 <div className="md:shrink-0">
-                <img
+                <Image
                     className="h-48 w-full object-cover md:h-full"
                     src={image}
-                    alt={image}
+                    alt={title}
+                    width={1200}
+                    height={675}
                 />
                 </div>
                 <div className="p-8">

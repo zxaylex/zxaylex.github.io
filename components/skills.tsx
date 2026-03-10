@@ -1,4 +1,5 @@
 import { skillGroups } from "@/lib/site-data"
+import Image from "next/image"
 
 export function SkillsSection() {
   return (
@@ -13,10 +14,12 @@ export function SkillsSection() {
                                 className="w-full min-w-0 rounded-xl border border-border bg-card/80 p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
                             >
                                 <div className="flex flex-col items-center">
-                                    <img
+                                    <Image
                                         src={skill.logo}
                                         alt={skill.name}
                                         className="mb-3 h-12 w-12 object-contain"
+                                        width={48}
+                                        height={48}
                                     />
                                     <span className="text-center text-sm font-medium md:text-base">{skill.name}</span>
                                 </div>
